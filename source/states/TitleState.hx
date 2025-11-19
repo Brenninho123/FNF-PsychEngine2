@@ -551,7 +551,7 @@ class TitleState extends MusicBeatState
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
 				case 2:
 					#if PSYCH_WATERMARKS
-					createCoolText(['Psych Engine by'], 40);
+					createCoolText(['Psych Engine Kişiler'], 40);
 					#else
 					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 					#end
@@ -560,15 +560,15 @@ class TitleState extends MusicBeatState
 					addMoreText('Shadow Mario', 40);
 					addMoreText('Riveren', 40);
 					#else
-					addMoreText('present');
+					addMoreText('Tarafında Sunmak');
 					#end
 				case 5:
 					deleteCoolText();
 				case 6:
 					#if PSYCH_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
+					createCoolText(['ilişki', 'ile'], -40);
 					#else
-					createCoolText(['In association', 'with'], -40);
+					createCoolText(['ilişki olarak', 'ile'], -40);
 					#end
 				case 8:
 					addMoreText('newgrounds', -40);
@@ -587,7 +587,7 @@ class TitleState extends MusicBeatState
 				case 15:
 					addMoreText('Night');
 				case 16:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+					addMoreText('Funkin Türkiye Çeviri'); // credTextShit.text += '\nFunkin';
 
 				case 17:
 					skipIntro();
