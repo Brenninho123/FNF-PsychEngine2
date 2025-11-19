@@ -63,7 +63,7 @@ class StorageUtil
 
 			File.saveContent('saves/$fileName', fileData);
 			if (alert)
-				CoolUtil.showPopUp('$fileName has been saved.', "Success!");
+				CoolUtil.showPopUp('$fileName has been saved.', "Başarılı!");
 		}
 		catch (e:Exception)
 			if (alert)
@@ -91,7 +91,7 @@ class StorageUtil
 			&& !AndroidPermissions.getGrantedPermissions().contains('android.permission.READ_MEDIA_IMAGES'))
 			|| (AndroidVersion.SDK_INT < AndroidVersionCode.TIRAMISU
 				&& !AndroidPermissions.getGrantedPermissions().contains('android.permission.READ_EXTERNAL_STORAGE')))
-			CoolUtil.showPopUp('If you accepted the permissions you are all good!' + '\nIf you didn\'t then expect a crash' + '\nPress OK to see what happens',
+			CoolUtil.showPopUp('Eğer hepsini izin verdiysen Hepsi Tamam' + '\nIf you didn\'t then expect a crash' + '\nOK ye basarak dosyaları Otomatik koysun',
 				'Notice!');
 
 		try
@@ -101,7 +101,7 @@ class StorageUtil
 		}
 		catch (e:Dynamic)
 		{
-			CoolUtil.showPopUp('Please create directory to\n' + StorageUtil.getStorageDirectory(true) + '\nPress OK to close the game', 'Error!');
+			CoolUtil.showPopUp('Lütfen bu yere dosya oluşturun\n ' + StorageUtil.getStorageDirectory(true) + '\nOK ye basarak oyunu kapat', 'Hata!');
 			LimeSystem.exit(1);
 		}
 	}
