@@ -1,7 +1,6 @@
 # Friday Night Funkin' - Psych Engine V2 Template
 
-This Template for Making any Mods and Template you want, with Mobile Support.
-
+Psych Engine V2 is a Fork for Psych Engine 0.7.3 But Many Modded XD
 ![special](docs/img/special.png)
 
 ## Customization:
