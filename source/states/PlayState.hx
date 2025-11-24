@@ -650,10 +650,17 @@ class PlayState extends MusicBeatState
 
 		#if mobile
 		#if (!android)
+		addMobileControls(false);
+		mobileControls.instance.visible = true;
+		mobileControls.onButtonDown.add(onButtonPress);
+		mobileControls.onButtonUp.add(onButtonRelease);
 		addTouchPad("NONE", "P");
- 		addTouchPadCamera();
-		#end
-		#end
+		addTouchPadCamera(false);
+		mobileControls.instance.forEachAlive((button) ->
+		{
+			if (touchPad.buttonP != null)
+				button.deadZones.push(touchPad.buttonP);
+		});
 
 		super.create();
 		Paths.clearUnusedMemory();
