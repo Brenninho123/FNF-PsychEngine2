@@ -1337,8 +1337,6 @@ class PlayState extends MusicBeatState
 					makeEvent(event, i);
 		}
 
-		final isPsychRelease:Bool = songData.format == 'psych_v1';
-
 		for (section in noteData)
 		{
 			for (songNotes in section.sectionNotes)
