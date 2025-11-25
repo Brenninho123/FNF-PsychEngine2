@@ -1337,6 +1337,8 @@ class PlayState extends MusicBeatState
 					makeEvent(event, i);
 		}
 
+		final isPsychRelease:Bool = songData.format == 'psych_v1';
+
 		for (section in noteData)
 		{
 			for (songNotes in section.sectionNotes)
@@ -1345,8 +1347,10 @@ class PlayState extends MusicBeatState
 				var daNoteData:Int = Std.int(songNotes[1] % 4);
 				var gottaHitNote:Bool = section.mustHitSection;
 
-				if (songNotes[1] > 3)
+				if (!isPsychRelease)
 				{
+				  if (songNotes[1] > 3)
+				  {
 					gottaHitNote = !section.mustHitSection;
 				}
 
