@@ -553,11 +553,11 @@ class TitleState extends MusicBeatState
 					#if PSYCH_WATERMARKS
 					createCoolText(['Psych Engine V2'], 40);
 					#else
-					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+					createCoolText(['Brenninho', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 					#end
 				case 4:
 					#if PSYCH_WATERMARKS
-					addMoreText('Brenninho', 40);
+					addMoreText('Random Guy But Have a Good Heart', 40);
 					#else
 					addMoreText('Tarafında Sunmak');
 					#end
@@ -565,9 +565,9 @@ class TitleState extends MusicBeatState
 					deleteCoolText();
 				case 6:
 					#if PSYCH_WATERMARKS
-					createCoolText(['skibidi', 'toiled'], -40);
+					createCoolText(['I', 'love'], -40);
 					#else
-					createCoolText(['skibidi toiled', 'sigma'], -40);
+					createCoolText(['I am', 'Steve'], -40);
 					#end
 				case 8:
 					addMoreText('newgrounds', -40);
