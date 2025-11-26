@@ -557,8 +557,7 @@ class TitleState extends MusicBeatState
 					#end
 				case 4:
 					#if PSYCH_WATERMARKS
-					addMoreText('Shadow Mario', 40);
-					addMoreText('Riveren', 40);
+					addMoreText('Brenninho', 40);
 					#else
 					addMoreText('Tarafında Sunmak');
 					#end
@@ -566,9 +565,9 @@ class TitleState extends MusicBeatState
 					deleteCoolText();
 				case 6:
 					#if PSYCH_WATERMARKS
-					createCoolText(['ilişki', 'ile'], -40);
+					createCoolText(['skibidi', 'toiled'], -40);
 					#else
-					createCoolText(['ilişki olarak', 'ile'], -40);
+					createCoolText(['skibidi toiled', 'sigma'], -40);
 					#end
 				case 8:
 					addMoreText('newgrounds', -40);
@@ -587,7 +586,7 @@ class TitleState extends MusicBeatState
 				case 15:
 					addMoreText('Night');
 				case 16:
-					addMoreText('Funkin Türkiye Çeviri'); // credTextShit.text += '\nFunkin';
+					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
 
 				case 17:
 					skipIntro();
