@@ -559,7 +559,7 @@ class TitleState extends MusicBeatState
 					#if PSYCH_WATERMARKS
 					addMoreText('Random Guy But Have a Good Heart', 40);
 					#else
-					addMoreText('Tarafında Sunmak');
+					addMoreText('Meu cu - Por Boyzin');
 					#end
 				case 5:
 					deleteCoolText();
