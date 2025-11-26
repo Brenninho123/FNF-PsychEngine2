@@ -4,6 +4,13 @@ import states.MainMenuState;
 import backend.StageData;
 import flixel.addons.transition.FlxTransitionableState;
 import mobile.substates.MobileControlSelectSubState;
+
+import backend.ClientPrefs;
+import backend.StageData;
+
+import objects.Note;
+import objects.StrumNote;
+
 #if (target.threaded)
 import sys.thread.Thread;
 import sys.thread.Mutex;
