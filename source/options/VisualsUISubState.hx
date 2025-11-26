@@ -4,6 +4,9 @@ import objects.Note;
 import objects.StrumNote;
 import objects.Alphabet;
 
+import shaders.RGBPalette;
+import shaders.RGBPalette.RGBShaderReference;
+
 class VisualsUISubState extends BaseOptionsMenu
 {
 	public static var pauseMusics:Array<String> = ['None', 'Breakfast', 'Tea Time'];
@@ -70,6 +73,12 @@ class VisualsUISubState extends BaseOptionsMenu
 		option.maxValue = 1;
 		option.changeValue = 0.1;
 		option.decimals = 1;
+		addOption(option);
+
+  var option:Option = new Option('Note Skin RGB',
+			'If you prefer not to use RGB color, disable it.',
+			'noteRGB',
+			'bool');
 		addOption(option);
 
   var option:Option = new Option('Note Splash RGB',
