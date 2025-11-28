@@ -1,7 +1,9 @@
 name: Release
 on: workflow_dispatch
 
-permissions: write-all
+permissions:
+  contents: write
+  discussions: write
 
 env:
   PROJECT_NAME: PsychEngine
@@ -14,14 +16,14 @@ jobs:
         include:
           - name: Windows x64
             os: windows-2022
-            buildArgs: "windows -final"
+            buildArgs: "windows -final -X64 -D HXCPP_X64 -D 64bits"
             artifactName: Windows x64
-            artifactPath: export\release\windows\bin\*
+            artifactPath: export/release/windows/64bits/bin/*
           - name: Windows x32
             os: windows-2022
-            buildArgs: windows
+            buildArgs: "windows -final -X32 -D HXCPP_X32 -D 32bits"
             artifactName: Windows x32
-            artifactPath: export\32bit\windows\bin\*
+            artifactPath: export/release/windows/32bits/bin/*
           - name: Linux
             os: ubuntu-22.04
             buildArgs: "linux -final"
@@ -58,32 +60,52 @@ jobs:
       - name: Download Windows x64 Build
         uses: actions/download-artifact@main
         with:
-           name: Windows x64
-           path: /home/runner
+          name: Windows x64
+          path: /home/runner/Windows-x64
+
+      - name: Zip Windows x64 Build For Release
+        run: |
+          cd /home/runner/Windows-x64
+          zip -r "/home/runner/${{ env.PROJECT_NAME }}-Windows-x64.zip" .
 
       - name: Download Windows x32 Build
         uses: actions/download-artifact@main
         with:
-           name: Windows x32
-           path: /home/runner
+          name: Windows x32
+          path: /home/runner/Windows-x32
+
+      - name: Zip Windows x32 Build For Release
+        run: |
+          cd /home/runner/Windows-x32
+          zip -r "/home/runner/${{ env.PROJECT_NAME }}-Windows-x32.zip" .
 
       - name: Download Linux Build
         uses: actions/download-artifact@main
         with:
-           name: Linux
-           path: /home/runner
+          name: Linux
+          path: /home/runner/Linux
+
+      - name: Tar Linux Build For Release
+        run: |
+          cd /home/runner/Linux
+          tar czf "/home/runner/${{ env.PROJECT_NAME }}-Linux.tar" .
 
       - name: Download MacOS Build
         uses: actions/download-artifact@main
         with:
-           name: MacOS
-           path: /home/runner
-      
+          name: MacOS
+          path: /home/runner/MacOS
+
+      - name: Tar MacOS Build For Release
+        run: |
+          cd /home/runner/MacOS
+          tar czf "/home/runner/${{ env.PROJECT_NAME }}-MacOS.tar" .
+
       - name: Download Android Build
         uses: actions/download-artifact@main
         with:
-           name: Android
-           path: /home/runner
+          name: Android
+          path: /home/runner
 
       - name: Move Android File
         run: mv /home/runner/${{ env.PROJECT_NAME }}-release.apk /home/runner/${{ env.PROJECT_NAME }}-Android.apk
@@ -91,22 +113,23 @@ jobs:
       - name: Download iOS Build
         uses: actions/download-artifact@main
         with:
-           name: iOS
-           path: ${{ github.workspace }}
+          name: iOS
+          path: ${{ github.workspace }}
 
       - name: Move iOS File
         run: mv ${{ github.workspace }}/${{ env.PROJECT_NAME }}.ipa /home/runner/${{ env.PROJECT_NAME }}-iOS.ipa
+
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v4
 
       - name: Publish The Release
         uses: softprops/action-gh-release@v2
         with:
           name: "Template"
           tag_name: "0.7.3"
-          prerelease: false
+          last_release: false
           files: |
-            Windows x64
-            Windows x32
-            Linux
-            MacOS
             /home/runner/*.apk
             /home/runner/*.ipa
+            /home/runner/*.tar
+            /home/runner/*.zip
