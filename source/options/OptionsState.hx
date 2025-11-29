@@ -23,7 +23,7 @@ class OptionsState extends MusicBeatState
 		'Adjust Delay and Combo',
 		'Graphics',
 		'Visuals and UI',
-		'Gameplay',
+		'Preferences',
 
 		#if mobile
 		'Mobile Options'

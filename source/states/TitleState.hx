@@ -616,7 +616,7 @@ class TitleState extends MusicBeatState
 					case 'BBPANZU':
 						sound = FlxG.sound.play(Paths.sound('JingleBB'));
 
-					default: //Go back to normal ugly ass boring GF
+					default: //Go back to normal ugly ass boring GF lmao
 						remove(ngSpr);
 						remove(credGroup);
 						FlxG.camera.flash(FlxColor.WHITE, 2);
