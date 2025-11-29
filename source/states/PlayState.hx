@@ -439,6 +439,10 @@ class PlayState extends MusicBeatState
 		startHScriptsNamed('stages/' + curStage + '.hx');
 		#end
 
+		#if JAVA_SCRIPT_ALLOWED
+		startJSScriptsNamed('stages/' + curStage + '.js');
+		#end
+
 		if (!stageData.hide_girlfriend)
 		{
 			if(SONG.gfVersion == null || SONG.gfVersion.length < 1) SONG.gfVersion = 'gf'; //Fix for the Chart Editor
