@@ -37,6 +37,10 @@ import psychlua.LuaUtils.LuaTweenOptions;
 import psychlua.HScript;
 #end
 
+#if HSCRIPT_ALLOWED
+import psychlua.HScript;
+#end
+
 import psychlua.DebugLuaText;
 import psychlua.ModchartSprite;
 
