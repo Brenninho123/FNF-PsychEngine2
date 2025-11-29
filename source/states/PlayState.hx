@@ -3073,6 +3073,15 @@ class PlayState extends MusicBeatState
 		grpNoteSplashes.add(splash);
 	}
 
+	
+override public function create()
+{
+  playfieldRenderer = new PlayfieldRenderer(strumLineNotes, notes, this);
+  playfieldRenderer.cameras = [camHUD];
+  add(playfieldRenderer);
+  add(grpNoteSplashes);
+}
+
 	override function destroy() {
 		#if LUA_ALLOWED
 		for (lua in luaArray)
