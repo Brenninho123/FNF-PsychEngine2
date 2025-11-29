@@ -13,6 +13,7 @@ typedef LuaTweenOptions = {
 	startDelay:Float,
 	onUpdate:Null<String>,
 	onStart:Null<String>,
+	onHit:Null<String>,
 	onComplete:Null<String>,
 	loopDelay:Float,
 	ease:EaseFunction
@@ -33,6 +34,7 @@ class LuaUtils
 			startDelay: options.startDelay,
 			onUpdate: options.onUpdate,
 			onStart: options.onStart,
+			onHit: options.onHit,
 			onComplete: options.onComplete,
 			loopDelay: options.loopDelay,
 			ease: getTweenEaseByString(options.ease)
