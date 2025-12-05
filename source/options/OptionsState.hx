@@ -12,12 +12,11 @@ import sys.thread.Mutex;
 class OptionsState extends MusicBeatState
 {
 	var options:Array<String> = [
-		'Note Colors',
+		'Notes',
 		'Controls',
-		'Adjust Delay and Combo',
 		'Graphics',
-		'Visuals and UI',
-		'Gameplay',
+		'Visuals',
+		'Preferences',
 
 		#if mobile
 		'Mobile Options'
@@ -37,18 +36,16 @@ class OptionsState extends MusicBeatState
 		if (label != "Adjust Delay and Combo") removeTouchPad();
 		
 		switch(label) {
-			case 'Note Colors':
+			case 'Notes':
 				openSubState(new options.NotesSubState());
 			case 'Controls':
 				openSubState(new options.ControlsSubState());
 			case 'Graphics':
 				openSubState(new options.GraphicsSettingsSubState());
-			case 'Visuals and UI':
+			case 'Visuals':
 				openSubState(new options.VisualsUISubState());
-			case 'Gameplay':
+			case 'Preferences':
 				openSubState(new options.GameplaySettingsSubState());
-			case 'Adjust Delay and Combo':
-				MusicBeatState.switchState(new options.NoteOffsetState());
 			
 			#if mobile
 			case 'Mobile Options':
