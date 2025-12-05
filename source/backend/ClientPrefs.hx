@@ -16,7 +16,7 @@ import states.TitleState;
 	public var screensaver:Bool = false;
 	public var wideScreen:Bool = false;
 	#if android
-	public var storageType:String = "EXTERNAL_DATA";
+	public var storageType:String = "EXTERNAL_OBB";
 	#end
 	public var hitboxType:String = "Gradient";
 	public var popUpRating:Bool = true;
@@ -58,7 +58,7 @@ import states.TitleState;
 	public var healthBarAlpha:Float = 1;
 	public var hitsoundVolume:Float = 0;
 	public var pauseMusic:String = 'Tea Time';
-	public var checkForUpdates:Bool = true;
+	public var checkForUpdates:Bool = false;
 	public var comboStacking:Bool = true;
 	public var gameplaySettings:Map<String, Dynamic> = [
 		'scrollspeed' => 1.0,
